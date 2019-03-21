@@ -10,6 +10,7 @@
  */
 package com.rbac.control;
 
+import com.rbac.exception.CustomException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,12 +21,11 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 1.0.0
  */
 @RestController
-@RequestMapping("test1xx")
 @Slf4j
 public class TestControl {
 
-    @RequestMapping("tesxxt")
-    public String test(){
-        return "hello";
+    @RequestMapping("page.page")
+    public void test(){
+        throw new CustomException("就是想发生点异常");
     }
 }
